@@ -1,0 +1,71 @@
+{
+  "name": "galaxy-editor",
+  "version": "1.0.0",
+  "description": "hs-cms gallery module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --inline --progress --host 0.0.0.0 --port 3008",
+    "build:qa": "webpack --progress --colors",
+    "build:yz": "cross-env NODE_ENV=production webpack --progress --colors",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.yeshj.com:hjstudy-fe/galaxy-editor.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "authors": [
+    {
+      "name": "Zhiming Jiang",
+      "email": "jiangzhiming@hujiang.com>"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^2.10.2",
+    "classnames": "^2.2.5",
+    "immutability-helper": "^2.1.2",
+    "react": "^15.3.2",
+    "react-css-modules": "^4.1.0",
+    "react-dom": "^15.3.2",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "sanitize.css": "^5.0.0",
+    "urijs": "^1.18.9",
+    "uuid": "^3.0.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-import": "^1.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "clean-webpack-plugin": "^0.1.11",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.2",
+    "eslint": "^3.7.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^4.5.0",
+    "react-hot-loader": "^1.3.1",
+    "resolve-url-loader": "^2.0.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^4.0.0"
+  }
+}
