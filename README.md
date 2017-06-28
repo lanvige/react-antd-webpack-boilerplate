@@ -4,7 +4,7 @@
 
 - React 15 & React Router 4
 - Ant Design
-- Webpack 2
+- Webpack 3
 
 项目主要关注点在于如何构建一个大型的工程，使用这套如何的前提下，之前的最佳实践是否依然可行，和其配置方案。
 
