@@ -5,10 +5,12 @@ import {
   Link,
   Switch
 } from 'react-router-dom'
-import {Home,BasicRouting,NotMatch}  from './views'
+import {Home, NotMatch}  from './views'
 
 import Login from './views/Login';
+import BasicRouting from './views/BasicRouting';
 import Dashboard from './views/Dashboard';
+import Application from './views/Application'
 
 const NoMatch1 = ({ location }) => (
   <div>
@@ -20,18 +22,18 @@ const BasicExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/home">Dashboard</Link></li>
+        <li><Link to="/">Root</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/basic-routing">BasicRouting</Link></li>
         <li><Link to="/basic">NoMatch1</Link></li>
       </ul>
       <Switch>
-        <Route path="/login" component={Login}/>
-        <Route exact path="/" component={Home} />
-        <Route path="/home" component={Dashboard} />
-        <Route path="/basic-routing" component={BasicRouting} />
-        <Route component={NoMatch1} />
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/basic-routing" component={BasicRouting} />
+        <Route path="/" component={Application} />
+        {
+          // <Route component={NoMatch1} />
+        }
       </Switch>
     </div>
   </Router>
