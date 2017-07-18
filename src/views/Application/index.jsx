@@ -50,7 +50,12 @@ class App extends React.Component {
           <Content style={{ margin: '0 16px' }}>
             <div style={{ minHeight: 360, backgroundColor: "red" }}>
               {childRoutes.map((route, index) => (
-                <Route key={index} path={route.path} component={route.component} exactly={route.exactly} />
+                <Route 
+                  key={index} 
+                  path={route.path} 
+                  component={route.component} 
+                  exactly={route.exactly} 
+                />
               ))}
               <Route exact path="/www" render={() => (
                 <h3>Please select a topic.</h3>
