@@ -2544,6 +2544,10 @@ function-bind@^1.0.2, function-bind@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/function-bind/download/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
+g2-mobile@^2.1.22-beta.1:
+  version "2.1.22-beta.1"
+  resolved "http://registry.npm.taobao.org/g2-mobile/download/g2-mobile-2.1.22-beta.1.tgz#00a28d9556f82eda8b3fde4c00c518a15a2a62a2"
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "http://registry.npm.taobao.org/gauge/download/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"

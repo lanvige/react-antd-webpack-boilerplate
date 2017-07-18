@@ -8,6 +8,7 @@ import {
 import {Home,BasicRouting,NotMatch}  from './views'
 
 import Login from './views/Login';
+import Dashboard from './views/Dashboard';
 
 const NoMatch1 = ({ location }) => (
   <div>
@@ -20,7 +21,7 @@ const BasicExample = () => (
     <div>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/home">Dashboard</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/basic-routing">BasicRouting</Link></li>
         <li><Link to="/basic">NoMatch1</Link></li>
@@ -28,7 +29,7 @@ const BasicExample = () => (
       <Switch>
         <Route path="/login" component={Login}/>
         <Route exact path="/" component={Home} />
-        <Route path="/home" component={Home} />
+        <Route path="/home" component={Dashboard} />
         <Route path="/basic-routing" component={BasicRouting} />
         <Route component={NoMatch1} />
       </Switch>
