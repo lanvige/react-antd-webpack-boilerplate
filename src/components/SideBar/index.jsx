@@ -21,7 +21,7 @@ const { Sider } = Layout;
 
 class Sidebar extends React.Component {
 
-  componentDidMount () {
+  componentDidMount() {
     // this.props.getAllMenu()
   }
 
@@ -29,28 +29,38 @@ class Sidebar extends React.Component {
   }
 
 
-  render () {
+  render() {
     return (
       <Sider>
         <div className="ant-layout-logo"></div>
-        <Menu>
+        <Menu theme="dark">
           <Menu.Item>
             {
               <Link to="/dashboard">Dashboard</Link>
             }
           </Menu.Item>
-           <Menu.Item>
+          <Menu.Item>
             {
-              <Link to="/levelrouting">Levelrouting</Link>
+              <Link to="/form">Form</Link>
+            }
+          </Menu.Item>
+          <Menu.Item>
+            {
+              <Link to="/form">Form</Link>
+            }
+          </Menu.Item>
+          <Menu.Item>
+            {
+              <Link to="/about">About</Link>
             }
           </Menu.Item>
         </Menu>
         <div className="sider-trigger">
           <Icon
-              className="trigger"
-              type={'menu-unfold'}
-              onClick={this.toggle}
-            />
+            className="trigger"
+            type={'menu-unfold'}
+            onClick={this.toggle}
+          />
         </div>
       </Sider>
     )

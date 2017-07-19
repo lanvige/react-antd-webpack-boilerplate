@@ -13,8 +13,7 @@ class commonHeader extends React.Component {
 
 
   render () {
-    const {profile} = this.props
-    let username = 'sss';
+    let username = 'Jiang';
     const menu = (
       <Menu>
         <Menu.Item>
@@ -24,7 +23,7 @@ class commonHeader extends React.Component {
           选项2
         </Menu.Item>
         <Menu.Item>
-          <a onClick={this.handleLogOut}>注销</a>
+          <a>注销</a>
         </Menu.Item>
       </Menu>
     );

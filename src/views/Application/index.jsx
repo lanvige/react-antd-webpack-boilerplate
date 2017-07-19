@@ -5,13 +5,15 @@ import { Route, Redirect } from 'react-router-dom';
 
 // import { childRoutes } from '@/route'
 
-// import Header from '../../components/Header'
+import Header from '../../components/Header'
+import NavPath from '../../components/NavPath'
 import Sidebar from '../../components/Sidebar'
 import Footer from '../../components/Footer'
 
 
 import Dashboard from '../Dashboard';
-import LevelRouting from '../LevelRouting';
+import Form from '../Form';
+import About from '../About';
 
 
 import './index.scss';
@@ -21,12 +23,20 @@ const { Content } = Layout;
 
 export const childRoutes = [
   {
-    'path':'/levelrouting',
-    'component': LevelRouting
+    'path':'/about',
+    'component': About
   },
   {
     'path':'/dashboard',
     'component': Dashboard
+  },
+  {
+    'path':'/form',
+    'component': Form
+  },
+  {
+    'path':'/form1',
+    'component': () => <div>123</div>
   }
 ];
 
@@ -47,8 +57,10 @@ class App extends React.Component {
       <Layout className="ant-layout-has-sider">
         <Sidebar />
         <Layout>
+          <Header />
           <Content style={{ margin: '0 16px' }}>
-            <div style={{ minHeight: 360, backgroundColor: "red" }}>
+            <NavPath data={navpath} />
+            <div style={{ minHeight: 360 }}>
               {childRoutes.map((route, index) => (
                 <Route 
                   key={index} 

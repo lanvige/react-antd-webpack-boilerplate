@@ -57,11 +57,8 @@ const webpackConfig = {
       }, {
         test: /\.scss$/,
         rules: [{
-          loaders: ['style-loader', 'css-loader?modules&localIdentName=[hash:base64:5]_[local]', 'sass-loader'],
-          exclude: path.resolve(__dirname, 'src/styles')
-        }, {
           loaders: ['style-loader', 'css-loader', 'sass-loader'],
-          include: path.resolve(__dirname, 'src/styles')
+          include: path.resolve(__dirname, 'src')
         }]
       }, {
         test: /\.(js|jsx)$/,

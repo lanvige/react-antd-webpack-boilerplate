@@ -18,12 +18,7 @@ import Application from './views/Application'
 const BasicExample = () => (
   <Router>
     <div>
-      <ul>
-        <li><Link to="/">Root</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/basic-routing">BasicRouting</Link></li>
-        <li><Link to="/notmatch">NotMatch</Link></li>
-      </ul>
+
       <Switch>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/basic-routing" component={BasicRouting} />

@@ -1,9 +1,10 @@
 {
   "presets": [
-    "latest",
+    "env",
     "react"
   ],
   "plugins": [
-    "transform-object-rest-spread"
+    "transform-runtime",
+    ["import", [{ "libraryName": "antd", "style": "css" }]]
   ]
 }
