@@ -41,7 +41,7 @@ class Sidebar extends React.Component {
           </Menu.Item>
           <Menu.Item>
             {
-              <Link to="/form">Form</Link>
+              <Link to="/course">Course</Link>
             }
           </Menu.Item>
           <Menu.Item>

@@ -14,6 +14,7 @@ import Footer from '../../components/Footer'
 import Dashboard from '../Dashboard';
 import Form from '../Form';
 import About from '../About';
+import Course from '../Course';
 
 
 import './index.scss';
@@ -33,6 +34,10 @@ export const childRoutes = [
   {
     'path':'/form',
     'component': Form
+  },
+  {
+    'path':'/course',
+    'component': Course
   },
   {
     'path':'/form1',
