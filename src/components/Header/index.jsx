@@ -1,19 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Layout, Row, Col, Icon, Badge, Menu, Dropdown, Avatar, Popover } from 'antd'
-import './index.scss'
-import { Link, withRouter } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Layout, Row, Col, Icon, Badge, Menu, Dropdown, Avatar, Popover } from 'antd';
+import './index.scss';
+import { Link, withRouter } from 'react-router-dom';
 
 const { Header } = Layout;
 
 class commonHeader extends React.Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
   }
 
 
-  render () {
-    let username = 'Jiang';
+  render() {
+    const username = 'Jiang';
     const menu = (
       <Menu>
         <Menu.Item>
@@ -58,14 +58,14 @@ class commonHeader extends React.Component {
           <Col span={3}>
             <Dropdown overlay={menu}>
               <a className="ant-dropdown-link" href="#">
-                <Avatar style={{ verticalAlign: 'middle'}}>{username}</Avatar> <Icon type="down" />
+                <Avatar style={{ verticalAlign: 'middle' }}>{username}</Avatar> <Icon type="down" />
               </a>
             </Dropdown>
           </Col>
         </Row>
       </Header>
-    )
+    );
   }
 }
 
-export default withRouter(commonHeader)
+export default withRouter(commonHeader);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Home extends Component {
   render() {
@@ -10,6 +10,6 @@ export default class Home extends Component {
         <p>It also provides with the declarative options for Redirects, blocking a transition and Navigation Prompt.</p>
         <p>We will be covering them all in this example.</p>
       </div>
-    )
+    );
   }
 }

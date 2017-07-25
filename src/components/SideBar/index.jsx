@@ -1,26 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withRouter, matchPath } from 'react-router'
-import { Layout, Menu, Icon } from 'antd'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter, matchPath } from 'react-router';
+import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom';
 
-const SubMenu = Menu.SubMenu
+const SubMenu = Menu.SubMenu;
 
-import './index.scss'
+import './index.scss';
 
 const defaultProps = {
-  items: []
-}
+  items: [],
+};
 
 const propTypes = {
-  items: PropTypes.array
-}
+  items: PropTypes.array,
+};
 
 const { Sider } = Layout;
 
 
 class Sidebar extends React.Component {
-
   componentDidMount() {
     // this.props.getAllMenu()
   }
@@ -63,11 +62,11 @@ class Sidebar extends React.Component {
           />
         </div>
       </Sider>
-    )
+    );
   }
 }
 
 Sidebar.propTypes = propTypes;
 Sidebar.defaultProps = defaultProps;
 
-export default Sidebar
+export default Sidebar;

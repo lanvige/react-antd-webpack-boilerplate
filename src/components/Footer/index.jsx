@@ -1,22 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-import { Layout } from 'antd'
+import { Layout } from 'antd';
 
-import './index.scss'
+import './index.scss';
 
 const { Footer } = Layout;
 
 export default class commonFooter extends React.Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
   }
 
-  render () {
-
+  render() {
     return (
       <Footer style={{ textAlign: 'center' }}>
         xxxx 版权所有 © 2017 xxxxxx.com
       </Footer>
-    )
+    );
   }
 }

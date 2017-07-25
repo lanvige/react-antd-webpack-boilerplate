@@ -9,7 +9,6 @@ function generateUniqueId() {
 
 export default function createGM(__operation, height = null) {
   class Component extends React.Component {
-
     constructor(props, context) {
       super(props, context);
       this.chart = null;
@@ -22,7 +21,7 @@ export default function createGM(__operation, height = null) {
 
     componentWillReceiveProps(newProps) {
       const { data: newData } = newProps;
-      const { data: oldData } = this.props;ut
+      const { data: oldData } = this.props; ut;
 
       if (newData !== oldData) {
         this.chart.changeData(newData);
@@ -42,7 +41,7 @@ export default function createGM(__operation, height = null) {
     initChart(props) {
       const { data } = props;
       const chart = new GM.Chart({
-        id: this.chartId
+        id: this.chartId,
       });
       chart.source(data);
       __operation(chart);
@@ -50,12 +49,12 @@ export default function createGM(__operation, height = null) {
     }
 
     render() {
-      return (<canvas id={this.chartId} style={ {'width':'100%', 'height': height} }></canvas>);
+      return (<canvas id={this.chartId} style={ { width: '100%', height: height } }></canvas>);
     }
   }
 
   Component.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object).isRequired
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   return Component;

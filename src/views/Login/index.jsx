@@ -1,57 +1,58 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Form, Input, Button, Row, Col, Icon, message } from 'antd'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Form, Input, Button, Row, Col, Icon, message } from 'antd';
 import { withRouter } from 'react-router-dom';
-const FormItem = Form.Item
 
-import './index.scss'
+import './index.scss';
+
+const FormItem = Form.Item;
+
 
 const propTypes = {
   user: PropTypes.object,
   loggingIn: PropTypes.bool,
-  loginErrors: PropTypes.string
+  loginErrors: PropTypes.string,
 };
 
 class Login extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      loading: false
-    }
+      loading: false,
+    };
   }
 
-  handleSubmit (e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.setState({
-      loading: true
+      loading: true,
     });
-    
-    const data = this.props.form.getFieldsValue()
-    this.props.login(data.user, data.password).payload.promise.then(res => {
+
+    const data = this.props.form.getFieldsValue();
+    this.props.login(data.user, data.password).payload.promise.then((res) => {
       this.setState({
-        loading: false
+        loading: false,
       });
       if (res.error) {
         message.error(res.payload.response.data.message);
       }
-      if (!res.error && res.payload.data)  {
-        message.success('Welcome ' + res.payload.data.name);
+      if (!res.error && res.payload.data) {
+        message.success(`Welcome ${res.payload.data.name}`);
         this.props.history.replace('/');
       }
-    }).catch(err => {
+    }).catch((err) => {
       this.setState({
-        loading: false
+        loading: false,
       });
-    })
+    });
   }
 
-  toRegister () {
+  toRegister() {
     this.props.history.replace('/register');
   }
 
-  render () {
-    const { getFieldDecorator } = this.props.form
+  render() {
+    const { getFieldDecorator } = this.props.form;
     return (
       <Row className="login-row" type="flex" justify="space-around" align="middle">
         <Col span="8">
@@ -59,12 +60,12 @@ class Login extends React.Component {
             <h2 className="logo"><span>logo</span></h2>
             <FormItem>
               {getFieldDecorator('user')(
-                <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder='admin' />
+                <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder='admin' />,
               )}
             </FormItem>
             <FormItem>
               {getFieldDecorator('password')(
-                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder='123456' />
+                <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder='123456' />,
               )}
             </FormItem>
             <p>
@@ -77,7 +78,7 @@ class Login extends React.Component {
         </Col>
       </Row>
 
-    )
+    );
   }
 }
 
@@ -86,18 +87,18 @@ Login.propTypes = propTypes;
 Login = Form.create()(Login);
 
 function mapStateToProps(state) {
-  const {auth} = state;
+  const { auth } = state;
   if (auth.user) {
-      return {user: auth.user, loggingIn: auth.loggingIn, loginErrors: ''};
+    return { user: auth.user, loggingIn: auth.loggingIn, loginErrors: '' };
   }
 
-  return {user: null, loggingIn: auth.loggingIn, loginErrors: auth.loginErrors};
+  return { user: null, loggingIn: auth.loggingIn, loginErrors: auth.loginErrors };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    login: bindActionCreators(login, dispatch)
-  }
+    login: bindActionCreators(login, dispatch),
+  };
 }
 
-export default Login
+export default Login;
