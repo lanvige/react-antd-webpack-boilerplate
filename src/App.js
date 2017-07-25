@@ -1,27 +1,27 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
-} from 'react-router-dom'
+  Link,
+} from 'react-router-dom';
 
 const Home = () => (
   <div>
     <h2>Home</h2>
   </div>
-)
+);
 
 const About = () => (
   <div>
     <h2>About</h2>
   </div>
-)
+);
 
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
-)
+);
 
 const Topics = ({ match }) => (
   <div>
@@ -49,7 +49,7 @@ const Topics = ({ match }) => (
       <h3>Please select a topic.</h3>
     )}/>
   </div>
-)
+);
 
 const BasicExample = () => (
   <Router>
@@ -67,6 +67,6 @@ const BasicExample = () => (
       <Route path="/topics" component={Topics}/>
     </div>
   </Router>
-)
+);
 
-export default BasicExample
+export default BasicExample;
