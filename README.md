@@ -3,7 +3,7 @@
 这是一个基于 React.js, ant design 和 Webpack 2 的最佳实践。
 
 - React 15 & React Router 4
-- Ant Design
+- Ant Design 3
 - Webpack 3
 
 项目主要关注点在于如何构建一个大型的工程，使用这套如何的前提下，之前的最佳实践是否依然可行，和其配置方案。

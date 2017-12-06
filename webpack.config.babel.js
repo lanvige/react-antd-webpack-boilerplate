@@ -3,7 +3,7 @@ import path from 'path';
 
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+// import CopyWebpackPlugin from 'copy-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 
@@ -18,7 +18,7 @@ const webpackConfig = {
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    //app: ['react', './index.js']
+    // app: ['react', './index.js']
     app: './index.js',
     react: 'react',
   },
@@ -27,19 +27,19 @@ const webpackConfig = {
     extensions: ['.js', '.jsx'],
     modules: [
       path.resolve(__dirname, 'src'),
-      'node_modules'
-    ]
+      'node_modules',
+    ],
   },
 
   devtool: 'source-map',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].[hash:7].bundle.js"
+    filename: '[name].[hash:7].bundle.js',
   },
 
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   module: {
@@ -47,40 +47,40 @@ const webpackConfig = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
       }, {
         test: /\.(?:jpg|png|gif)$/,
-        loader: "url-loader",
-        options: { limit: 100000 }
+        loader: 'url-loader',
+        options: { limit: 100000 },
       }, {
         test: /\.scss$/,
         rules: [{
           loaders: ['style-loader', 'css-loader', 'sass-loader'],
-          include: path.resolve(__dirname, 'src')
-        }]
+          include: path.resolve(__dirname, 'src'),
+        }],
       }, {
         test: /\.(js|jsx)$/,
         loaders: [
           'babel-loader',
         ],
         exclude: /node_modules/,
-      }
-    ]
+      },
+    ],
   },
 
   plugins: [
-    new HtmlWebpackPlugin({  // Also generate a test.html
+    new HtmlWebpackPlugin({ // Also generate a test.html
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(__dirname, 'src/index.html'),
     }), // Generates default index.html
     new ExtractTextPlugin({
-      filename: "[name].[hash:7].css",
+      filename: '[name].[hash:7].css',
       allChunks: true,
     }),
     new CleanWebpackPlugin(['dist']),
-  ]
+  ],
 };
 
-export { webpackConfig as default }
+export { webpackConfig as default };

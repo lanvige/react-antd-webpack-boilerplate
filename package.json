@@ -1,7 +1,7 @@
 {
-  "name": "galaxy-editor",
+  "name": "react-antd-webpack-boilerplate",
   "version": "1.0.0",
-  "description": "hs-cms gallery module",
+  "description": "react-antd-webpack-boilerplate",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --inline --progress --host 0.0.0.0 --port 3008",
