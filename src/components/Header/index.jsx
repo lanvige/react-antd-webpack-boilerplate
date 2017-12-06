@@ -1,19 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Layout, Row, Col, Icon, Badge, Menu, Dropdown, Avatar, Popover } from 'antd';
-import './index.scss';
-import { Link, withRouter } from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Layout, Row, Col, Icon, Badge, Menu, Dropdown, Avatar, Popover } from 'antd'
+import './index.scss'
+import { Link, withRouter } from 'react-router-dom'
 
-const { Header } = Layout;
+const { Header } = Layout
 
 class commonHeader extends React.Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-
-  render() {
-    const username = 'Jiang';
+  render () {
+    const username = 'Jiang'
     const menu = (
       <Menu>
         <Menu.Item>
@@ -26,7 +25,7 @@ class commonHeader extends React.Component {
           <a>注销</a>
         </Menu.Item>
       </Menu>
-    );
+    )
 
     const content = (
       <div>
@@ -36,36 +35,36 @@ class commonHeader extends React.Component {
         <p>Content</p>
         <p>Content</p>
       </div>
-    );
+    )
 
     return (
       <Header style={{ background: '#fff', padding: 0 }}>
-        <Row type="flex" justify="end" align="middle">
+        <Row type='flex' justify='end' align='middle'>
           <Col span={3}>
-            <Badge className="header-icon" count={5}>
-              <Link to="/mailbox">
-                <Icon type="mail" />
+            <Badge className='header-icon' count={5}>
+              <Link to='/mailbox'>
+                <Icon type='mail' />
               </Link>
             </Badge>
-            <Popover content={content} title="Title" trigger="click">
-              <Badge className="header-icon" dot>
-                <a href="#">
-                  <Icon type="notification" />
+            <Popover content={content} title='Title' trigger='click'>
+              <Badge className='header-icon' dot>
+                <a href='#'>
+                  <Icon type='notification' />
                 </a>
               </Badge>
             </Popover>
           </Col>
           <Col span={3}>
             <Dropdown overlay={menu}>
-              <a className="ant-dropdown-link" href="#">
-                <Avatar style={{ verticalAlign: 'middle' }}>{username}</Avatar> <Icon type="down" />
+              <a className='ant-dropdown-link' href='#'>
+                <Avatar style={{ verticalAlign: 'middle' }}>{username}</Avatar> <Icon type='down' />
               </a>
             </Dropdown>
           </Col>
         </Row>
       </Header>
-    );
+    )
   }
 }
 
-export default withRouter(commonHeader);
+export default withRouter(commonHeader)

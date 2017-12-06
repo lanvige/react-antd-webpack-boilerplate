@@ -1,14 +1,12 @@
-import webpack from 'webpack';
-import path from 'path';
+import webpack from 'webpack'
+import path from 'path'
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 // import CopyWebpackPlugin from 'copy-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
-
+import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 // console.log('Webpack env:', `${NODE_ENV}`);
-
 
 /**
  * Webpack settings used for all env.
@@ -20,26 +18,26 @@ const webpackConfig = {
   entry: {
     // app: ['react', './index.js']
     app: './index.js',
-    react: 'react',
+    react: 'react'
   },
 
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
       path.resolve(__dirname, 'src'),
-      'node_modules',
-    ],
+      'node_modules'
+    ]
   },
 
   devtool: 'source-map',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:7].bundle.js',
+    filename: '[name].[hash:7].bundle.js'
   },
 
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 
   module: {
@@ -48,39 +46,39 @@ const webpackConfig = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+          use: 'css-loader'
+        })
       }, {
         test: /\.(?:jpg|png|gif)$/,
         loader: 'url-loader',
-        options: { limit: 100000 },
+        options: { limit: 100000 }
       }, {
         test: /\.scss$/,
         rules: [{
           loaders: ['style-loader', 'css-loader', 'sass-loader'],
-          include: path.resolve(__dirname, 'src'),
-        }],
+          include: path.resolve(__dirname, 'src')
+        }]
       }, {
         test: /\.(js|jsx)$/,
         loaders: [
-          'babel-loader',
+          'babel-loader'
         ],
-        exclude: /node_modules/,
-      },
-    ],
+        exclude: /node_modules/
+      }
+    ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({ // Also generate a test.html
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/index.html'),
+      template: path.resolve(__dirname, 'src/index.html')
     }), // Generates default index.html
     new ExtractTextPlugin({
       filename: '[name].[hash:7].css',
-      allChunks: true,
+      allChunks: true
     }),
-    new CleanWebpackPlugin(['dist']),
-  ],
-};
+    new CleanWebpackPlugin(['dist'])
+  ]
+}
 
-export { webpackConfig as default };
+export { webpackConfig as default }
