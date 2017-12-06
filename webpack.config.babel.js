@@ -17,7 +17,7 @@ const webpackConfig = {
 
   entry: {
     // app: ['react', './index.js']
-    app: './index.js',
+    app: ['react-hot-loader/patch', './index.js'],
     react: 'react'
   },
 
@@ -61,7 +61,7 @@ const webpackConfig = {
       }, {
         test: /\.(js|jsx)$/,
         loaders: [
-          'babel-loader'
+          'react-hot-loader/webpack', 'babel-loader'
         ],
         exclude: /node_modules/
       }
